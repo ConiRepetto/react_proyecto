@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+// import Button from './components/Button';
+// import ItemListContainer from './ItemList/ItemListContainer';
+// import { NavDropdown } from 'react-bootstrap';
+import NavBar from './components/NavBar';
 
-function App() {
+function App() { //funcion con nombre de componente, retornando algo que se muestra en el DOM
+  // const title = 'Proyecto Coni 25/10'
+
+  // /* CSS-in-JS */
+  // const styleH3 = {backgroundColor:"pink", color: "white"}
+  
+  // let titulo = <h3 style={styleH3}>Hola! 👽</h3>
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <NavBar/>
+
+
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {title}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button text= 'Boton1' color='purple' />
+        <ItemListContainer/> */}
       </header>
     </div>
+
   );
 }
 
