@@ -1,0 +1,25 @@
+.itemButton {
+  display: flex;
+  padding: 0.5em;
+}
+
+button {
+  color: #090909;
+  padding: 0.2em 0.9em;
+  font-size: 18px;
+   border-radius: 0.5em; /*NO ANDA */ 
+  background: #68a36d75;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+}
+
+button:hover {
+  box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  border: 1px solid white;
+}
+
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+    -4px -4px 12px #ffffff;
+}

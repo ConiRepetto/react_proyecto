@@ -1,0 +1,20 @@
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cardItem{
+    padding: 1em;
+}
+
+.imgItem{
+    width: 10em;
+    height: auto;
+    border-radius: 5%;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+}

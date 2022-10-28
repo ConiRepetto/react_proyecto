@@ -1,0 +1,41 @@
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: static;
+    top: 0;
+    left: 0;
+}
+
+.navbar-brand {
+    clip-path: circle(50% at 50% 50%);
+    width: 5em;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: baseline;
+}
+
+nav ul li {
+    padding: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #252525;
+}
+
+nav ul li a:hover {
+    color: #566e9a;
+    cursor: pointer;
+}
+
+nav ul li a:active {
+    color: pink;
+}
