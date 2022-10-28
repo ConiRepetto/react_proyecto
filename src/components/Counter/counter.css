@@ -1,0 +1,12 @@
+span{
+    padding: 0 1em 0 1em;
+}
+
+.counterIcon{
+    font-size: 1em;
+    transition: transform .2s;
+}
+.counterIcon:hover{
+    cursor: pointer;
+    transform: scale(1.2); 
+    }

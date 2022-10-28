@@ -7,8 +7,10 @@ button {
   color: #090909;
   padding: 0.2em 0.9em;
   font-size: 18px;
-   border-radius: 0.5em; /*NO ANDA */ 
-  background: #68a36d75;
+  border-radius: 0.5em;
+  /*NO ANDA */
+  /* background: #68a36d75;
+  background: #98c15b; */
   border: 1px solid #e8e8e8;
   transition: all .3s;
 }
