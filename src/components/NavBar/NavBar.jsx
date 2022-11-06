@@ -59,7 +59,7 @@ function NavBar(props) {
 export default NavBar;
 
 
- 
+
 
 // function OffcanvasExample(props) {
 //     return (

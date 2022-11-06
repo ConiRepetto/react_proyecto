@@ -1,44 +1,44 @@
 const products = [
     {
     id: 1,
-    title: "Isidoro",
+    title: "Crema medicinal diurna",
     price: 1903,
     stock: 383,
     category: "facial",
     thumbnail: "/imgs/p1.png",
-    description: "92.195.133.242"
-}, {
+    description: "Hecho a mano. Hipoalergénico. En ecoenvases reutilizables de 50cc"}, 
+    {
     id: 2,
-    title: "Dottie",
+    title: "Crema Facial Nocturna",
     price: 321,
     stock: 620,
-    category: "corporal",
+    category: "facial",
     thumbnail: "/imgs/p2.png",
-    description: "178.155.19.136"
+    description: "Crema facial terapéutica nocturna"
 }, {
     id: 3,
-    title: "Peggy",
+    title: "Sales de Baño",
     price: 859,
     stock: 768,
     category: "corporal",
     thumbnail: "/imgs/p3.png",
-    description: "47.91.169.128"
+    description: "Aromáticas y naturales con flores de lavanda"
 }, {
     id: 4,
-    title: "Carolan",
+    title: "Broncodilatadora",
     price: 1231,
     stock: 772,
     category: "corporal",
     thumbnail: "/imgs/p4.png",
-    description: "223.37.78.71"
+    description: "ArtesanalFlores naturales. Eucalyptus globulus y aloe barbadensis. Cera de abejas de opérculo"
 }, {
     id: 5,
-    title: "Deonne",
+    title: "Jabón medicinal",
     price: 128,
     stock: 845,
     category: "corporal",
-    thumbnail: "/imgs/p2.png",
-    description: "131.9.191.56"
+    thumbnail: "/imgs/p5.png",
+    description: "De glicerina vegetal. Limpieza hidratante. Artesanal. Hipoalergénico.Peso 100g"
 }, {
     id: 6,
     title: "Saunderson",
