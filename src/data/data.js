@@ -1,0 +1,100 @@
+const products = [
+    {
+    id: 1,
+    title: "Isidoro",
+    price: 1903,
+    stock: 383,
+    category: "facial",
+    thumbnail: "/imgs/p1.png",
+    description: "92.195.133.242"
+}, {
+    id: 2,
+    title: "Dottie",
+    price: 321,
+    stock: 620,
+    category: "corporal",
+    thumbnail: "/imgs/p2.png",
+    description: "178.155.19.136"
+}, {
+    id: 3,
+    title: "Peggy",
+    price: 859,
+    stock: 768,
+    category: "corporal",
+    thumbnail: "/imgs/p3.png",
+    description: "47.91.169.128"
+}, {
+    id: 4,
+    title: "Carolan",
+    price: 1231,
+    stock: 772,
+    category: "corporal",
+    thumbnail: "/imgs/p4.png",
+    description: "223.37.78.71"
+}, {
+    id: 5,
+    title: "Deonne",
+    price: 128,
+    stock: 845,
+    category: "corporal",
+    thumbnail: "/imgs/p2.png",
+    description: "131.9.191.56"
+}, {
+    id: 6,
+    title: "Saunderson",
+    price: 1101,
+    stock: 473,
+    category: "facial",
+    thumbnail: "/imgs/p3.png",
+    description: "6.84.57.121"
+}, {
+    id: 7,
+    title: "Conrad",
+    price: 945,
+    stock: 424,
+    category: "facial",
+    thumbnail: "/imgs/p1.png",
+    description: "225.138.150.47"
+}, {
+    id: 8,
+    title: "Valerye",
+    price: 1224,
+    stock: 555,
+    category: "corporal",
+    thumbnail: "/imgs/p4.png",
+    description: "238.18.252.126"
+}, {
+    id: 9,
+    title: "Aliza",
+    price: 183,
+    stock: 299,
+    category: "Bigender",
+    thumbnail: "/imgs/p2.png",
+    description: "168.29.202.243"
+}, {
+    id: 10,
+    title: "Budd",
+    price: 211,
+    stock: 504,
+    category: "facial",
+    thumbnail: "/imgs/p4.png",
+    description: "139.192.69.246"
+}, {
+    id: 11,
+    title: "Molly",
+    price: 509,
+    stock: 227,
+    category: "corporal",
+    thumbnail: "/imgs/p1.png",
+    description: "210.200.158.130"
+}, {
+    id: 12,
+    title: "Jsandye",
+    price: 1611,
+    stock: 703,
+    category: "corporal",
+    thumbnail: "/imgs/p3.png",
+    description: "56.5.145.244"
+}]
+
+export default products

@@ -8,7 +8,7 @@ function CartWidget() {
   return (
     <div>
       <a href="/"><FontAwesomeIcon icon={faBagShopping} /></a>
-      {/* <img src="/imgs/bag.png" alt="bag" style={styleWidget} /> */}
+      <span className='badge badge-warning' id='lblCartCount'> 1 </span>
     </div>
   )
 }

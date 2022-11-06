@@ -7,6 +7,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@popperjs/core": "^2.11.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:css": "nodemon -e scss -x \"npm run build:css\"",
+    "build:css": "node-sass --output-style compressed assets/scss/estilos.scss assets/css/stylepack.css"
   },
   "eslintConfig": {
     "extends": [

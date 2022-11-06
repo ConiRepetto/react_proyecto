@@ -1,15 +1,36 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Item from './Item'
 import "./Item.css"
+import getItems from '../../Services/mockService'
 
 function ItemListContainer(props) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(
+    () => {
+      getItems().then((respuestaDatos) => {
+        setProducts(respuestaDatos);
+      }); //para tomar el resultado 
+    },
+    []
+  )
+
   return (
     <div>
       <h3>{props.greeting}</h3>
       <div className='itemContainer'>
-        <Item imgUrl="/imgs/p1.png" title="producto1" price="100" />
-        <Item imgUrl="/imgs/p2.png" title="producto2" price="200" />
-        <Item imgUrl="/imgs/p3.png" title="producto3" price="300" />
+        {
+          products.map((product) => { //Map > itera sobre e array de productos y aplica los datos que saco de el array a mi componente Item
+            return (
+              <Item
+                key={product.id}
+                imgUrl={product.thumbnail}
+                title={product.title}
+                price={product.price}
+              />
+            )
+          })
+        }
       </div>
     </div>
   )
