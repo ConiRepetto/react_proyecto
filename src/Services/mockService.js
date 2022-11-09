@@ -5,9 +5,19 @@ function getItems() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products);
-        }, 3000); //milisegundos de espera
+        }, 1000); //milisegundos de espera
     });
 } 
+
+
+export function getSingleItem() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products[6]);
+        }, 2000); //milisegundos de espera
+    });
+} 
+
 
 export default getItems;
 
