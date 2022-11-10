@@ -41,60 +41,60 @@ const products = [
     description: "De glicerina vegetal. Limpieza hidratante. Artesanal. Hipoalergénico.Peso 100g"
 }, {
     id: 6,
-    title: "Saunderson",
+    title: "Ungüento venotónico",
     price: 1101,
     stock: 473,
-    category: "facial",
-    thumbnail: "/imgs/p3.png",
-    description: "6.84.57.121"
+    category: "corporal",
+    thumbnail: "/imgs/p6.png",
+    description: "Sana la pared venosa. Así es que calma procesos hemorroidales. Desinflama piernas cansadas. Trata várices y telangiectasias (arañitas). Lo creé sumando las propiedades, de las hojas de malva y de los frutos del castaño de las indias."
 }, {
     id: 7,
-    title: "Conrad",
+    title: "Ungüento multifloral",
     price: 945,
     stock: 424,
-    category: "facial",
-    thumbnail: "/imgs/p1.png",
-    description: "225.138.150.47"
+    category: "corporal",
+    thumbnail: "/imgs/p7.png",
+    description: "Flores naturales, aloe, vitamina e. Ayuda a sanar lesiones en la piel"
 }, {
     id: 8,
-    title: "Valerye",
+    title: "Pomada descongestiva",
     price: 1224,
     stock: 555,
     category: "corporal",
-    thumbnail: "/imgs/p4.png",
-    description: "238.18.252.126"
+    thumbnail: "/imgs/p8.png",
+    description: "Con eucalyptus cinerea, alcanfor y menta común. Para ayudarte a ventilar mejor."
 }, {
     id: 9,
-    title: "Aliza",
+    title: "Crema Fitoterapéutica Facial",
     price: 183,
     stock: 299,
-    category: "Bigender",
-    thumbnail: "/imgs/p2.png",
-    description: "168.29.202.243"
+    category: "facial",
+    thumbnail: "/imgs/p9.png",
+    description: "Nocturna. Reparadora. Artesanal. Fragancia herbal Bamboo con gel de aloes y vitamina e, flores naturales, cera de abejas de opérculo, eucalyptus globulus. Hipoalergénica"
 }, {
     id: 10,
-    title: "Budd",
+    title: "Jabon de Coco",
     price: 211,
     stock: 504,
-    category: "facial",
-    thumbnail: "/imgs/p4.png",
-    description: "139.192.69.246"
+    category: "corporal",
+    thumbnail: "/imgs/p10.png",
+    description: "Caléndula, coco, palta, girasol."
 }, {
     id: 11,
-    title: "Molly",
+    title: "Bálsamos labiales",
     price: 509,
     stock: 227,
-    category: "corporal",
-    thumbnail: "/imgs/p1.png",
-    description: "210.200.158.130"
+    category: "facial",
+    thumbnail: "/imgs/p11.png",
+    description: "De rosa mosqueta y almendras dulces. Con perlas de karité, cacao, vitamina E y tintes vegetales. Hidratantes. Protectores naturales. Para usar solos o debajo del color que elijas.6gr"
 }, {
     id: 12,
-    title: "Jsandye",
+    title: "Perfume de Rosas",
     price: 1611,
     stock: 703,
     category: "corporal",
-    thumbnail: "/imgs/p3.png",
-    description: "56.5.145.244"
+    thumbnail: "/imgs/p12.png",
+    description: "Perfume corporal de rosa, sándalo oriental y benjuí"
 }]
 
 export default products

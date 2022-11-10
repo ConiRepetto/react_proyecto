@@ -1,22 +1,35 @@
 // BACK END
 import products from "../data/data";
 
-function getItems() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-        }, 1000); //milisegundos de espera
-    });
-} 
 
-
-export function getSingleItem() {
+//Filtrar por Categoria
+function getItems(idCategory) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products[6]);
-        }, 2000); //milisegundos de espera
+        if (idCategory === undefined) {
+            setTimeout(() => {
+                resolve(products);
+            }, 1000); //milisegundos de espera
+        } else {
+            setTimeout(() => {
+                let itemsRequested = products.filter((item) => item.category === idCategory);
+                resolve(itemsRequested);
+            }, 1000);
+        }
     });
-} 
+}
+
+//Muestra detalle d 1 solo producto con Boton Ver Mas
+export function getSingleItem(idParam) {
+    return new Promise((resolve, reject) => {
+        let itemRequested = products.find((item) => item.id === Number(idParam));
+
+        if (itemRequested === undefined) reject("Producto no encontrado");
+
+        setTimeout(() => {
+            resolve(itemRequested);
+        }, 2000);
+    });
+}
 
 
 export default getItems;

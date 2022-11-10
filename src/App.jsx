@@ -21,7 +21,10 @@ function App() { //funcion con nombre de componente, retornando algo que se mues
           {title}
           <Routes>
             <Route path="/" element={<ItemListContainer greeting="Todos nuestros productos" />}></Route>
-            <Route path="/detail" element={<ItemDetailContainer />}></Route>
+            
+            <Route path="/category/:idCategory" element={<ItemListContainer greeting="Categoria" />}></Route>
+            <Route path="/" element={<ItemListContainer greeting="Todos nuestros productos" />}></Route>
+            <Route path="/detail/:id" element={<ItemDetailContainer />}></Route>
             <Route path="*" element={<h1>ERROR, ESTA PAGINA NO EXISTE</h1>}></Route>
           </Routes>
         </header>

@@ -2,18 +2,22 @@ import { useState, useEffect } from 'react'
 import Item from './Item'
 import "./Item.css"
 import getItems from '../../Services/mockService'
+import { useParams } from "react-router-dom"
 
 function ItemListContainer(props) {
   const [products, setProducts] = useState([]);
 
-  useEffect(
-    () => {
-      getItems().then((respuestaDatos) => {
-        setProducts(respuestaDatos);
-      }); //para tomar el resultado 
-    },
-    []
-  )
+  const { idCategory } = useParams();
+
+  async function getItemsAsync() {
+    let respuesta = await getItems(idCategory)
+    setProducts(respuesta);
+  }
+
+  useEffect(() => {
+    getItemsAsync();
+  },
+    [idCategory]) //para que vuelva a ejecutar el efecto cada vez que se cambia el idCategory
 
   return (
     <div>
@@ -24,6 +28,7 @@ function ItemListContainer(props) {
             return (
               <Item
                 key={product.id}
+                id={product.id}
                 imgUrl={product.thumbnail}
                 title={product.title}
                 price={product.price}
