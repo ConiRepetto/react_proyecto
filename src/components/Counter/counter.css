@@ -1,12 +1,15 @@
-span{
+span {
     padding: 0 1em 0 1em;
+    font-size: 0.9em;
 }
 
-.counterIcon{
-    font-size: 1em;
+.counterIcon {
+    font-size: 0.8em;
     transition: transform .2s;
 }
-.counterIcon:hover{
+
+.counterIcon:hover {
     cursor: pointer;
-    transform: scale(1.2); 
-    }
+    transform: scale(1.2);
+}
+

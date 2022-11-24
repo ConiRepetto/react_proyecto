@@ -7,11 +7,12 @@ function Button(props){ //Nombre del componente
 
     function handleClick(){
       setColorBtn('grey')
+      props.onClick && props.onClick();//si el boton cuando lo llamo tiene esta prop, la puede ejecutar
     }
 
     return (
     <div className="itemButton">
-      <button onClick={handleClick} style={{backgroundColor: colorBtn}}> {props.text} </button>
+      <button onClick={handleClick} style={{backgroundColor: colorBtn}}> {props.children} </button>
     </div> //retorno
     )
   }

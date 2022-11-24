@@ -1,10 +1,19 @@
-import React from "react";
-import "../ItemList/Item"
-import Button from "../Button/Button";
+import React, {useContext} from 'react' //hook
+import { cartContext } from "../../context/cartContext"//importar el contexto que quiero usar
+import "./itemDetail.css"
 import ItemCount from "../Counter/Counter";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
-function ItemDetail({product}) {
+function ItemDetail({ product }) {
+
+    const {addToCart} = useContext(cartContext)
+
+    function onAddToCart(count) {
+        alert(`Agregaste ${count} productos a tu carrito`);
+        addToCart(product,count)
+        /* setState(count) */
+    }
+
     return (
         <div className="cardContainterDetail">
             <div className="cardItem">
@@ -12,13 +21,10 @@ function ItemDetail({product}) {
                 <h3>{product.title}</h3>
                 <p className="precio">${product.price}</p>
                 <p>{product.description}</p>
-                <ItemCount stock={8} valorInicial={5} /> {/*  No funciona el stock ni el valor inicial?? */}
-                <div className="buttonContainer">
-                    <Link to="/">
-                        <Button text="Volver" color="#68a36d75" />
-                    </Link>
-                    <Button text="Agregar al Carrito" color="#98c15b" />
-                </div>
+                <ItemCount
+                    onAddToCart={onAddToCart}
+                    stock={product.stock}
+                    valorInicial={5} /> {/*  No funciona  el valor inicial?? */}
             </div>
         </div>
     );

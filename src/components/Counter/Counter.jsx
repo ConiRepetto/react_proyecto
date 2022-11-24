@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import "./counter.css"
+import Button from "../Button/Button";
+//import { Link } from "react-router-dom";
 
-
-function ItemCount(props) {
+function ItemCount({ stock, onAddToCart }) {
     let [count, setCount] = React.useState(1)
 
     function handleResta() {
@@ -13,14 +14,23 @@ function ItemCount(props) {
     }
 
     function handleSuma() {
-        if (count < props.stock)
-        setCount(count + 1)
+        if (count < stock) //el valor de stock entra desde ItemListContainer (que es el que lee DATA), de ahi pasa a Item y de Item llega al Counter.
+            setCount(count + 1)
     }
+
     return (
         <div>
-            <FontAwesomeIcon icon={faMinus} onClick={handleResta} className="counterIcon" />
-            <span>{count}</span>
-            <FontAwesomeIcon icon={faPlus} onClick={handleSuma} className="counterIcon" />
+            <div className='counterContainer'>
+                <FontAwesomeIcon icon={faMinus} onClick={handleResta} className="counterIcon" />
+                <span>{count}</span>
+                <FontAwesomeIcon icon={faPlus} onClick={handleSuma} className="counterIcon" />
+            </div>
+            <div className="buttonContainer">
+                {/* <Link to="/">
+                    <Button color="#68a36d75">Volver</Button>
+                </Link> */}
+                <Button onClick= {()=> onAddToCart(count)} color="#98c15b" >Agregar al Carrito</Button>
+            </div>
         </div>
     )
 }

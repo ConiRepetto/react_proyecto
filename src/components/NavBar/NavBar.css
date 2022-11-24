@@ -1,7 +1,7 @@
 .navbar-container {
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    padding: 0.3em;
     justify-content: space-between;
     width: 100%;
     align-items: center;
@@ -12,7 +12,8 @@
 
 .navbar-brand {
     clip-path: circle(50% at 50% 50%);
-    width: 5em;
+    width: 4em;
+    height: auto;
 }
 
 .list-container {
@@ -61,4 +62,45 @@ nav ul li a:active {
     padding: 0 5px;
     vertical-align: top;
     margin-left: -10px;
+}
+
+/*Buscador*/
+.formContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer{
+    padding: 0.3em;
+}
+.inputBuscar{
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 6px;
+    font-size: 1rem;
+    padding: 0.5em 0.9em 0.5em 0.9em;
+}
+
+.inputBuscar:focus{
+    border-color: #27862f;
+    border-width: 2px;
+    outline: none;
+}
+
+.buttonBuscar{
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 1px ;
+    border-radius: 6px;
+    border-color: #27862f;
+    color: #27862f;
+    font-size: 1rem ;
+    padding: 0.5em 0.9em 0.5em 0.9em;
+}
+
+.buttonBuscar:hover{
+    background-color: #27862f;
+    border-color: #27862f;
+    color: #ffffff;
 }

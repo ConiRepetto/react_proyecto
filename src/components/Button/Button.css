@@ -5,15 +5,18 @@
 
 button {
   color: #090909;
-  padding: 0.2em 0.7em;
-  font-size: 1em;
-  text-decoration: none;
-  border-radius: 6px;
-  /*NO ANDA */
+  padding: 0.2em 0.5em;
+  font-size: 0.9em;
+  text-decoration: none!; 
+  border-radius: 6px;/*NO ANDA */
   /* background: #68a36d75;
   background: #98c15b; */
   border: 1px solid #e8e8e8;
   transition: all .3s;
+}
+
+a{
+  text-decoration: none !important;
 }
 
 button:hover {

@@ -32,6 +32,7 @@ function ItemListContainer(props) {
                 imgUrl={product.thumbnail}
                 title={product.title}
                 price={product.price}
+                stock={product.stock}
               />
             )
           })

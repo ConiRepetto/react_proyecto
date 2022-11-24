@@ -3,10 +3,11 @@ const products = [
     id: 1,
     title: "Crema medicinal diurna",
     price: 1903,
-    stock: 383,
+    stock: 3,
     category: "facial",
     thumbnail: "/imgs/p1.png",
-    description: "Hecho a mano. Hipoalergénico. En ecoenvases reutilizables de 50cc"}, 
+    description: "Hecho a mano. Hipoalergénico. En ecoenvases reutilizables de 50cc"
+}, 
     {
     id: 2,
     title: "Crema Facial Nocturna",

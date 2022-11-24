@@ -31,6 +31,19 @@ export function getSingleItem(idParam) {
     });
 }
 
+//Buscador por input
+export function findItem(findValue) {
+    return new Promise((resolve, reject) => {
+        let itemFind = products.find((item) => item.title.includes(findValue) );
+
+        if (itemFind === undefined) reject("Producto no encontrado");
+
+        setTimeout(() => {
+            resolve(itemFind);
+        }, 2000);
+    });
+}
+
 
 export default getItems;
 
