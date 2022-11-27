@@ -11,7 +11,8 @@ function getItems(idCategory) {
             }, 1000); //milisegundos de espera
         } else {
             setTimeout(() => {
-                let itemsRequested = products.filter((item) => item.category === idCategory);
+                let itemsRequested = products.filter(
+                    (item) => item.category === idCategory);
                 resolve(itemsRequested);
             }, 1000);
         }
@@ -27,7 +28,7 @@ export function getSingleItem(idParam) {
 
         setTimeout(() => {
             resolve(itemRequested);
-        }, 2000);
+        }, 1000);
     });
 }
 
@@ -40,7 +41,7 @@ export function findItem(findValue) {
 
         setTimeout(() => {
             resolve(itemFind);
-        }, 2000);
+        }, 3000);
     });
 }
 

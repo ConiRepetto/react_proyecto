@@ -2,17 +2,23 @@ import { useState, useEffect } from "react";
 import { getSingleItem } from "../../Services/mockService";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import Loader from "../Loaders/loader";
 
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const {id} = useParams();
     console.log(useParams())
     
     async function getItemsAsync() {
-        let respuesta = await getSingleItem(id);
-        setProduct(respuesta);
+        getSingleItem(id).then(respuesta => {
+            setProduct(respuesta);
+            setIsLoading(false);
+        })
+        
     }
 
     useEffect(
@@ -20,9 +26,10 @@ function ItemDetailContainer() {
             getItemsAsync();
         }, []);
 
-    return <ItemDetail product={product} />
-    
+    if(isLoading)
+        return (<div><Loader /></div> )
 
+    return( <ItemDetail product={product} />)
 
 }
 

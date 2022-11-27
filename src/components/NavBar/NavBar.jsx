@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 function NavBar(props) {
-    
+
     return (
         <div className="navbar-container">
             <div className="logo_header">
@@ -20,7 +20,7 @@ function NavBar(props) {
                 <nav className="navlist-container">
                     <ul className="list-container">
                         <li>
-                            <FormInput blockChar = "1234567890@#$%^&*()_+-!?<>{}[]" placeholder = "Buscar"/>
+                            <FormInput blockChar="1234567890@#$%^&*()_+-!?<>{}[]" placeholder="Buscar" />
                         </li>
                         <li>
                             <Link to="/"><h2>Inicio</h2></Link>
@@ -35,7 +35,9 @@ function NavBar(props) {
                             <Link to="/category/aromaterapia">Aromaterapia</Link>
                         </li>
                         <li>
-                            <CartWidget />
+                            <Link to="/cart">
+                                <CartWidget />
+                            </Link>
                         </li>
                     </ul>
 

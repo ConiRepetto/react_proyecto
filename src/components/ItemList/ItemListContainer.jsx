@@ -1,45 +1,37 @@
-import { useState, useEffect } from 'react'
-import Item from './Item'
+import { useState, useEffect } from 'react' //
 import "./Item.css"
-import getItems from '../../Services/mockService'
-import { useParams } from "react-router-dom"
+import getItems from '../../Services/mockService'//
+import { useParams } from "react-router-dom" //
+import ItemList from "./ItemList";
+import Loader from "../Loaders/loader";
 
 function ItemListContainer(props) {
-  const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
-  const { idCategory } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
 
-  async function getItemsAsync() {
-    let respuesta = await getItems(idCategory)
-    setProducts(respuesta);
-  }
+    const { idCategory } = useParams();
+    console.log(useParams())
 
-  useEffect(() => {
-    getItemsAsync();
-  },
-    [idCategory]) //para que vuelva a ejecutar el efecto cada vez que se cambia el idCategory
+    async function getItemsAsync() {
+        getItems(idCategory).then(respuesta => {
+            setProducts(respuesta);
+            setIsLoading(false);
+        })
 
-  return (
-    <div>
-      <h3>{props.greeting}</h3>
-      <div className='itemContainer'>
-        {
-          products.map((product) => { //Map > itera sobre e array de productos y aplica los datos que saco de el array a mi componente Item
-            return (
-              <Item
-                key={product.id}
-                id={product.id}
-                imgUrl={product.thumbnail}
-                title={product.title}
-                price={product.price}
-                stock={product.stock}
-              />
-            )
-          })
-        }
-      </div>
-    </div>
-  )
+    }
+
+    useEffect(
+        () => {
+            getItemsAsync();
+        }, [idCategory]);
+
+    if (isLoading)
+        return (<div><Loader /></div>)
+
+    return (<ItemList products={products} />)
+
 }
+
 
 export default ItemListContainer
