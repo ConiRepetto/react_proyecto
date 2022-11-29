@@ -8,9 +8,11 @@ import { CartContextProvider } from "./context/cartContext"
 import CartView from './components/CartView/CartView';
 import { useParams } from "react-router-dom";
 
+
 function App() { //funcion con nombre de componente, retornando algo que se muestra en el DOM
   //console.log(iconList);
   // /* CSS-in-JS */
+  
   const styleH1 = { color: "#68a36d" }
   let title = <h1 style={styleH1}>Verde Fuir · Cosmetica Natural ·</h1>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react' //
 import "./Item.css"
-import getItems from '../../Services/mockService'//
+import getItems from '../../Services/firestore'//
 import { useParams } from "react-router-dom" //
 import ItemList from "./ItemList";
 import Loader from "../Loaders/loader";
@@ -11,14 +11,12 @@ function ItemListContainer(props) {
     const [isLoading, setIsLoading] = useState(true);
 
     const { idCategory } = useParams();
-    console.log(useParams())
+
 
     async function getItemsAsync() {
-        getItems(idCategory).then(respuesta => {
-            setProducts(respuesta);
-            setIsLoading(false);
-        })
-
+        let respuesta = await getItems(idCategory);
+        setProducts(respuesta);
+        setIsLoading(false);
     }
 
     useEffect(

@@ -4,8 +4,7 @@ import Item from "./Item";
 function ItemList({ products }) {
     return (
         <div className="item-list">
-            {
-                products.map((product) => { //Map > itera sobre e array de productos y aplica los datos que saco de el array a mi componente Item
+            {products.map((product) => { //Map > itera sobre e array de productos y aplica los datos que saco de el array a mi componente Item
                     return (
                         <Item
                             key={product.id}
