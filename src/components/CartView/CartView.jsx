@@ -17,7 +17,7 @@ function CartView() {
                 {
                     cart.map(item =>
 
-                        <div className='cartViewContainer'>
+                        <div key={item.id} className='cartViewContainer'>
                             <div className='imgCartCont'><img className='imgCart' src={item.thumbnail} alt="" /></div>
                             <h2>{item.title}</h2>
                             <h4>${item.price}</h4>
