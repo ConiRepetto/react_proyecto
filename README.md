@@ -1,5 +1,7 @@
 Verde Fluir - Cosmetica Natural
 
+https://verdefluir.vercel.app/
+
 Esta es la tienda online de un emprendimiento familiar de venta de productos cosmeticos artesanales.
 
 Elementos dentro del proyecto:
