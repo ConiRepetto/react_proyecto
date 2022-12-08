@@ -30,7 +30,7 @@ function ItemCount({ stock, onAddToCart }) {
                     <Button color="#68a36d75">Volver</Button>
                 </Link> */}
 
-                {stock <= 0 ? <Button colorBtn="red" >Sin Stock</Button> : <Button onClick={() => onAddToCart(count)} color="#98c15b" >Agregar al Carrito</Button>}
+                {stock <= 0 ? <Button colorBtn="red" >Sin Stock</Button> : <Button onClick={() => onAddToCart(count)} colorBtn="#98c15b" >Agregar al Carrito</Button>}
 
                 
             </div>

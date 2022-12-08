@@ -8,7 +8,7 @@ function footer() {
 
     return (
         <div>
-            <footer class="d-flex justify-content-sm-center justify-content-md-center justify-content-xl-center justify-content-lg-center">
+            <footer className="d-flex justify-content-sm-center justify-content-md-center justify-content-xl-center justify-content-lg-center">
                 <p> Copyright <span id='current-year'>©</span>  </p>
                 <a href="./assets/pages/contacto.html"> Contacto </a>
                 <a href="/" target="_blank">   Instagram</a>

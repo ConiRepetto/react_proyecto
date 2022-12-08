@@ -17,7 +17,7 @@ function Item(props) {
                 {props.stock <=0 && <span>Sin Stock</span>}
                 <div className="buttonContainer">
                     <Link to={urlDetail}>
-                        <Button color={props.stock <=0 ? "red" : "#68a36d"}>Ver Detalles</Button>
+                        <Button colorBtn={props.stock <=0 ? "red" : "#68a36d"}>Ver Detalles</Button>
                     </Link>
                 </div>
             </div>

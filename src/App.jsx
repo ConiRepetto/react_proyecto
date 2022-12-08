@@ -7,11 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./context/cartContext"
 import CartView from './components/CartView/CartView';
 import { useParams } from "react-router-dom";
+import ThankYou from './components/CartView/ThankYou';
+import FormInput from './components/FormInput/FormInput';
 
 
-function App() { //funcion con nombre de componente, retornando algo que se muestra en el DOM
-  //console.log(iconList);
-  // /* CSS-in-JS */
+function App() { 
   
   const styleH1 = { color: "#68a36d" }
   let title = <h1 style={styleH1}>Verde Fuir · Cosmetica Natural ·</h1>
@@ -28,6 +28,8 @@ function App() { //funcion con nombre de componente, retornando algo que se mues
               <Route path="/category/:idCategory" element={<ItemListContainer greeting="Productos de Cuidado ${} " />}></Route>
               <Route path="/detail/:id" element={<ItemDetailContainer />}></Route>
               <Route path="/cart" element={<CartView/>}></Route>
+              <Route path="/forminput/:idOrder" element={<FormInput/>}></Route>
+              <Route path="/thankyou/:idOrder" element={<ThankYou/>}></Route>
               <Route path="*" element={<h1>ERROR, ESTA PAGINA NO EXISTE</h1>}></Route>
             </Routes>
           </header>

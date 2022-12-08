@@ -1,57 +1,73 @@
-import React from "react";
-import "../NavBar/NavBar.css"
-import { findItem } from "../../Services/mockService";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import './form.css'
+
+import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom'
+import Button from "../Button/Button";
 
 function FormInput(props) {
-    // function handleSearch(evt) {
-    //     const inputValue = evt.target.value;
-    //     console.log(inputValue);
-    //     findItem(inputValue);
-    //     let urlFind = `/detail/${id}`;
-    //     const [product, setProduct] = useState([]);
-    //     const { id } = useParams();
-    //     console.log(useParams())
-    //     async function getItemsAsync() {
-    //         let respuesta = await findItem(id);
-    //         setProduct(respuesta);
-    //     }
-    //     useEffect(
-    //         () => {
-    //             getItemsAsync();
-    //         }, []);
-    // }
+    const navigate = useNavigate()
+    const idOrder = useParams().idOrder
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+    })
 
-    function handleSubmit(evt) {
-        evt.preventDefault();
+    function onInputChange(evt) {
+        let nameInput = evt.target.name;
+        let value = evt.target.value;
+
+        let newData = { ...data }
+
+        newData[nameInput] = value;
+        setData(newData)
+        console.log(newData)
     }
 
-    function handleKeyDown(evt) {
-        if (props.blockChar.includes(evt.key)) { //comparo las teclas bloqueadas con las keys presionadas en el input
-            evt.preventDefault();
-        }
+    function onSubmit(evt) {
+        // if(data.name.length === 0 || data.email.length === 0 || data.phone.length === 0 || data.address.length === 0) alert("Te falta completar algun dato.")
+
+        evt.preventDefault();
+        props.onSubmit(evt, data)
+
+        navigate(`/thankyou/${idOrder}`)
     }
 
     return (
-        <form className="formContainer">
-            <div className="inputContainer">
-                <input
-                    onKeyDown={handleKeyDown}//evento onKyDown, se activa cuando el usuario presiona una tecla
-                    type="search"
-                    className="inputBuscar"
-                    id="ejemplo"
-                    aria-label="Search"
-                    placeholder={props.placeholder} />
-            </div>
-            <div>
-            <Link to="/">
-                <button
-                    //onClick={handleSearch}
-                    type="search"
-                    className="buttonBuscar">Buscar</button>
-            </Link>
-            </div>
-        </form>
+        <div>
+            <form onSubmit={onSubmit} className="formContainer">
+                <div className="formInput">
+                    <label htmlFor="name">Nombre y Apellido</label>
+                    <input required value={data.name} type="text" name="name" id="" onChange={onInputChange} />
+                </div>
+
+                <div className="formInput">
+                    <label htmlFor="email">E-Mail</label>
+                    <input required value={data.email} type="email" name="email" id="" onChange={onInputChange} />
+                </div>
+
+                <div className="formInput">
+                    <label htmlFor="phone">Telefono</label>
+                    <input required value={data.phone} type="phone" name="phone" id="" onChange={onInputChange} />
+                </div>
+
+                <div className="formInput">
+                    <label htmlFor="address">Direccion</label>
+                    <input required value={data.address} type="text" name="address" id="" onChange={onInputChange} />
+                </div>
+                <Button
+                    disabled={!(data.name !== "" && data.email !== "" && data.phone !== "" && data.address !== "")}
+                    type="submit"
+                    onClick={(evt) => props.onSubmit(evt, data)}
+                    colorBtn="red"
+                >
+                    Enviar Orden
+                </Button>
+
+            </form>
+        </div>
     )
 }
 

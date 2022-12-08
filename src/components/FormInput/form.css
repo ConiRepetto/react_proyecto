@@ -1,0 +1,17 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    align-self: left;
+}
+
+label{
+    padding-right: 0.5rem;
+}

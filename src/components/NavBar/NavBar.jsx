@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget";
 import "./NavBar.css"
 //import Button from 'react-bootstrap/Button';
 //import Form from 'react-bootstrap/Form';
-import FormInput from "../FormInput/FormInput";
+//import NavBarSearch from "./SearchBar";
 import { Link } from "react-router-dom";
 
 
@@ -19,9 +19,9 @@ function NavBar(props) {
             <div>
                 <nav className="navlist-container">
                     <ul className="list-container">
-                        <li>
-                            <FormInput blockChar="1234567890@#$%^&*()_+-!?<>{}[]" placeholder="Buscar" />
-                        </li>
+                        {/* <li>
+                            <NavBarSearch blockChar="1234567890@#$%^&*()_+-!?<>{}[]" placeholder="Buscar" />
+                        </li> */}
                         <li>
                             <Link to="/"><h2>Inicio</h2></Link>
                         </li>

@@ -8,8 +8,12 @@ import {
     getDocs,
     getDoc,
     query,
-    where
+    where,
+    addDoc,
+    documentId,
+    writeBatch
 } from "firebase/firestore";
+import products from "../data/data";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCj80X7pPieKhN6tgoZTXWIicCuCJL_PG8",
@@ -24,9 +28,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const DB = getFirestore(app)
 
-// export  function testDataBase() {
-//     console.log(app)
-// }
+
 
 //1- Traer todos los documentos
 export default async function getItems() {
@@ -50,25 +52,80 @@ export async function getSingleItem(idParams) {
     const docSnapshot = await getDoc(docRef);
     const itemData = docSnapshot.data();
     itemData.id = docSnapshot.id;
-    
+
     return itemData
 }
 
 
 //3- Traer todos los documentos segun categoria
-export async function getItemsByCat(categoryParams){
+export async function getItemsByCat(categoryParams) {
     const collectionRef = collection(DB, "Productos");
-    
+
     const queryCat = query(collectionRef, where("category", "==", categoryParams))
 
     const documentSnapshot = await getDocs(queryCat); //Recibe por parametro una coleccion y devuelve los documentos
 
     const documentsData = documentSnapshot.docs.map(doc => {
-        return{
+        return {
             ...doc.data(),
             id: doc.id,
         }
     })
 
     return documentsData
+}
+
+// 4- ENviar orden de compra a firebase (control de stock)
+export async function createOrder(order) {
+    const collectionRef = collection(DB, "orders");
+
+    const batch = writeBatch(DB)
+
+    let arrayIdsItems = order.items.map(items => items.id)
+    const collectionProductsRef = collection(DB, "Productos")
+    const q = query(collectionProductsRef, where(documentId(), "in", arrayIdsItems))
+    const productsSnap = await getDocs(q)
+
+    const productsDocs = productsSnap.docs
+
+    // productsDocs.forEach(doc => {
+    //     let stockActual = doc.data().stockActual;
+    //     let itemInCart = order.items.find(item => item.id === doc.id)
+    //     console.log(stockActual)
+    //     console.log(itemInCart.count)
+    //     let stockToUpdate = stockActual - itemInCart.count
+    //     if (stockToUpdate <= 0)
+    //         throw new Error("No hay Stock disponible")
+
+    //     batch.update(doc.ref, {
+    //         stock: stockToUpdate
+    //     })
+    // })
+
+    const docRef = doc(collectionRef)
+    batch.set(docRef, order)
+    batch.commit()
+
+    const docOrder = await addDoc(collectionRef, order)
+    
+    return (docOrder.id)
+}
+
+//SearchBar
+
+export function getSearchItems(keyword) {
+    keyword = keyword.trim().toLowerCase();
+
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            if (keyword.length === 0) {
+                resolve(products);
+            } else {
+                let itemsRequested = products.filter((item) =>
+                    item.title.toLowerCase().includes(keyword)
+                );
+                resolve(itemsRequested);
+            }
+        }, 1000);
+    });
 }

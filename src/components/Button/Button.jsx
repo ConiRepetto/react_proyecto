@@ -3,7 +3,7 @@ import React, {useState} from "react"; //para que funcione el handleClick
 
 
 function Button(props){ //Nombre del componente
-    const [colorBtn, setColorBtn] = useState(props.color); //siempre usar Set + algo. 
+    const [colorBtn, setColorBtn] = useState(props.colorBtn); //siempre usar Set + algo. 
 
     function handleClick(){
       setColorBtn('grey')
@@ -12,7 +12,7 @@ function Button(props){ //Nombre del componente
 
     return (
     <div className="itemButton">
-      <button onClick={handleClick} style={{backgroundColor: colorBtn}}> {props.children} </button>
+      <button onClick={handleClick} style={{backgroundColor: colorBtn}} disabled={props.disabled} type={props.type}> {props.children} </button>
     </div> //retorno
     )
   }

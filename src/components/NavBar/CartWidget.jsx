@@ -14,7 +14,7 @@ function CartWidget() {
 
   return (
     <div>
-      <a href="/"><FontAwesomeIcon icon={faBagShopping} /></a>
+      <FontAwesomeIcon icon={faBagShopping} />
       {
         numSpan >= 1 ?
         <span className='badge badge-warning' id='lblCartCount'> {miContext.itemsInCart()} </span> : <span></span>

@@ -11,9 +11,7 @@ export function CartContextProvider({ children }) {
 
         let itemAlreadyInCart = cart.findIndex(productInCart => productInCart.id === product.id)
         let newCart = [...cart]
-        console.log("----->>>>", itemAlreadyInCart)
-        console.log(newCart)
-
+        
         if (itemAlreadyInCart !== -1) { //no entendi por que lo de -1
             newCart[itemAlreadyInCart].count += count
             setCart(newCart)
@@ -33,14 +31,14 @@ export function CartContextProvider({ children }) {
     }
 
     function clearCart() {
-
+        setCart([])
     }
 
     //usar filter,  filtrar todos los items del carrito  con id distinto al que se le pasa por prop, y eliminar cuando es el mismo id
     function removeItem(idEliminar) {
-        let newCart = [...cart];
+        let newCart = [...cart]; 
         let itemAEliminar = cart.findIndex(productEliminar => productEliminar.id === idEliminar)
-        newCart.pop(itemAEliminar)
+        newCart.pop(itemAEliminar) 
         setCart(newCart)
         alert(`Producto ${idEliminar} eliminado`)
 
@@ -49,17 +47,17 @@ export function CartContextProvider({ children }) {
         // alert(`Producto ${idEliminar} eliminado`)
     }
 
-    //calcular costo total de la compra
     function priceInCart() {
+        //calcular costo total de la compra
         let totalAPagar = 0;
-        cart.forEach(itemInCart => totalAPagar += itemInCart.price)
+        cart.forEach(itemInCart => totalAPagar = (itemInCart.price)*(itemInCart.count))
         return totalAPagar
     }
 
-
+    
 
     return ( // retorna el Provider del context creado, llamado en APP
-        <cartContext.Provider value={{ cart, addToCart, itemsInCart, clearCart, removeItem, priceInCart }}>
+        <cartContext.Provider value={{cart, addToCart, itemsInCart, clearCart, removeItem, priceInCart}}>
             {children}
         </cartContext.Provider>
     )

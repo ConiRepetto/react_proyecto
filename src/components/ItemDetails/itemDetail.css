@@ -1,4 +1,29 @@
-.itemContainer {
+.cardContainterDetail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.cardItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0em 1em 0 1em;
+}
+
+.cardSide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 1em 0 1em;
+}
+
+.cardDescription {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -11,9 +36,6 @@ h3 {
     padding: 1em;
 }
 
-.cardContainter {
-    padding: 0.5em 0.5em 0.5em 0.5em;
-}
 
 .cardContainterDetail {
     display: flex;
@@ -45,7 +67,7 @@ h3 {
     width: 10em;
     height: auto;
     border-radius: 6px;
-    
+
 }
 
 .precio {
@@ -59,7 +81,7 @@ h3 {
     justify-content: center;
 }
 
-.buttonIrCarrito{
+.buttonIrCarrito {
     display: flex;
     flex-direction: row;
     justify-content: center;

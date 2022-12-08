@@ -1,18 +1,35 @@
 import React, { useContext } from 'react'
 import "./cartView.css"
 import { cartContext } from "../../context/cartContext"
+import FormInput from '../FormInput/FormInput'
 import Button from '../Button/Button'
-
+import { createOrder} from '../../Services/firestore'
+import { useNavigate } from "react-router-dom";
 
 
 function CartView() {
     const { cart, removeItem, clearCart, priceInCart } = useContext(cartContext)
+    const navigate = useNavigate()
 
-    if(cart.length === 0) return (<h1>Carrito Vacio</h1>)
+    if (cart.length === 0) return (<h1>Carrito Vacio</h1>)
+
+    async function handleCheckout(evt, data) {
+        const order = {
+            buyer: data,
+            items: cart,
+            total: priceInCart(),
+            date: new Date() //objeto de tipo fecha que en firebase se traduce a timestamp
+        };
+        const orderId = await createOrder(order);
+        console.log(order)
+        navigate(`/thankyou/${orderId}`)
+
+    }
 
     return (
 
         <div className='cartContainer'>
+
             <div className='cartItemsCont'>
                 {
                     cart.map(item =>
@@ -26,14 +43,15 @@ function CartView() {
                         </div>
                     )
                 }
-                <Button onClick={() => clearCart()} className='button2'>Vaciar Carrito</Button>
+                <Button onClick={() => clearCart()} className='button2' colorBtn="#e288b">Vaciar Carrito</Button>
             </div>
 
             <div className='precioTotal'>
-                <p>$Costo total</p>
-                <p>Descuento: %</p>
-                <p>Total a pagar: $</p>
-                <h1>{priceInCart()}</h1>
+                <p>Total a pagar: </p>
+                <h3>${priceInCart()}</h3>
+
+                <FormInput onSubmit={handleCheckout}/>
+
             </div>
 
         </div>

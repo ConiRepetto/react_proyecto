@@ -11,8 +11,7 @@ function ItemDetailContainer() {
     const [isLoading, setIsLoading] = useState(true);
 
     const {id} = useParams();
-    console.log(useParams())
-    
+        
     async function getItemsAsync() {
         getSingleItem(id).then(respuesta => {
             setProduct(respuesta);
